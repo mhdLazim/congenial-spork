@@ -1,0 +1,30 @@
+<html>
+   <head>
+      <input type="text" id="search" placeholder="enter your name"</input>
+      <button onclick="searchName()">search</button>
+      <div id="result"></div>
+         <script>
+             let users = [
+        { name: "Saheel", age: 22 },
+        { name: "Rahul", age: 25 },
+        { name: "Arun", age: 21 }
+    ];
+function searchName(){
+   let name=document.getElementById("search").value;
+      let result=document.getElementById("result");
+
+      let user=users.find((item)=>{
+        return item.name.toLowerCase() === name.toLowerCase();
+      });
+if(user){
+result.innerHTML =
+"<h3> Name : " + user.name + "</h3>" +
+"<p>Age:" + user.age + "</p>"
+}else{
+   result.innerHTML="Name not found";
+}
+
+}
+         </script>
+   </head>
+</html>
